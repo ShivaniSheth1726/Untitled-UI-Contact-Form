@@ -33,19 +33,33 @@ import {
   
   const Aside = () => {
     return (
-      <aside>
-        {contactInfo.map((contact) => {
-          return (
-            <div key={contact.id} className="mb-6">
-              <contact.icon className="text-2xl text-lime-400" />
-              <h3 className="text-lg font-bold">{contact.title}</h3>
-              <p className="mb-2 font-semibold text-stone-600">
-                {contact.description}
-              </p>
-              <p>{contact.action}</p>
-            </div>
-          );
-        })}
+      <aside className="flex min-h-screen flex-col justify-between">
+        <div>
+          {contactInfo.map((contact) => {
+            return (
+              <div key={contact.id} className="mb-6">
+                <contact.icon className="text-2xl text-lime-400" />
+                <h3 className="text-lg font-bold">{contact.title}</h3>
+                <p className="mb-2 font-semibold text-stone-600">
+                  {contact.description}
+                </p>
+                <p>{contact.action}</p>
+              </div>
+            );
+          })}
+        </div>
+  
+        <footer className="flex gap-2 text-2xl text-lime-600">
+          <a href="#">
+            <RiFacebookCircleLine />
+          </a>
+          <a href="#">
+            <RiTwitterXLine />
+          </a>
+          <a href="#">
+            <RiLinkedinBoxLine />
+          </a>
+        </footer>
       </aside>
     );
   };
